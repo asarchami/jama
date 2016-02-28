@@ -4,11 +4,24 @@
   <title>Jama</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <%= yield :navbar %>
+  <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9">
+            <%= yield %>
+          </div>
+          <div class="col-md-3">
+            <%= render partial: "layouts/sidebar" %>
+          </div>
+        </div>
+      </div>
+  </div>
+  <%= render partial: 'layouts/footer' %>
 </body>
 </html>

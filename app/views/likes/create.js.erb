@@ -1,0 +1,5 @@
+$('#post-<%= @likable.id %>-like').addClass('btn-primary').removeClass('btn-default');
+$('#post-<%= @likable.id %>-like').attr("name", "<%= @likable.class.to_s.downcase %>-<%= @likable.id %>-<%= @like.id %>");
+
+var counter = $('#<%= @likable.class.to_s.downcase %>-<%= @likable.id %>-likes-counter');
+counter.html(parseInt(counter.html(), 10)+1);

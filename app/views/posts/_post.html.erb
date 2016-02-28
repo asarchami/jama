@@ -1,0 +1,15 @@
+<div class="post row">
+  <div class="col-md-1 hidden-sm hidden-xs post-owner-thumb">
+    <a href="#">
+      <%= image_tag "profile.png", size: "40x40", alt: "image", class: "img-responsive" %>
+    </a>
+  </div>
+  <div id="post-<%= post.id %>" class="col-md-11 post-content">
+    <div class="row post-body">
+      <%= post.body %>
+    </div>
+    <%= render partial: 'images', locals: {post: post} %>
+    <%= render partial: 'post_actions', locals: {post: post} %>
+    <%# <%= render partial: 'comments', locals: {post: post} %>
+  </div>
+</div>

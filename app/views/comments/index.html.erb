@@ -1,0 +1,8 @@
+<div class="comments" id="comments-<%= @commentable.id %>">
+  <div class="media-list">
+    <div id="<%= @commentable.class.to_s.downcase %>-comments-<%= @commentable.id %>">
+      <%= render @comments %>
+    </div>
+    <%= render partial: 'comments/form', locals: {commentable: @commentable} %>
+  </div>
+</div>

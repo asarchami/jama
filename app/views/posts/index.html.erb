@@ -1,0 +1,58 @@
+<% content_for :navbar do %>
+  <%= render partial: 'layouts/navbar' %>
+<% end %>
+
+<p id="notice"><%= notice %></p>
+
+<div class="row" id="status-form">
+  <div class="col-md-1 hidden-sm hidden-xs">
+    <a href="#">
+      <%= image_tag "profile.png", size: "40x40", alt: "image", class: "img-responsive" %>
+    </a>
+  </div>
+  <div class="col-md-11">
+    <%= render 'form' %>
+  </div>
+</div>
+
+<%= render @posts %>
+
+<!-- Javascript -->
+
+<script type="text/javascript" charset="utf-8">
+$("#attach_image").hide();
+
+$("#toggle_attach").click(function(){
+  $("#attach_image").toggle(500);
+});
+
+// $(".comments").hide();
+$(".comment-button").click(function () {
+  var paramsArray = $(this).attr('name').split('-');
+  if($("#comments-" + paramsArray[1]).length == 0) {
+    //it doesn't exist
+    $("#" + $(this).attr('name')).append($('<div>').load('comments/' + paramsArray[1] + '/type/' + paramsArray[0])).show(500);
+  } else {
+    $("#comments-" + paramsArray[1]).hide();
+    $("#comments-" + paramsArray[1]).parent().remove();
+
+    // or just toggle
+    // $("#comments-" + paramsArray[1]).toggle();
+  }
+});
+
+$(".like-button").click(function () {
+  var paramsArray = $(this).attr('name').split('-');
+  if (paramsArray[2] == 'like') {
+    var link = "/likes/" + paramsArray[1] + "/type/" + paramsArray[0];
+    $.post(link);
+  } else {
+    var link = "/likes/" + paramsArray[2];
+    $.ajax({
+      url: link,
+      type: 'DELETE'
+    });
+  }
+});
+
+</script>

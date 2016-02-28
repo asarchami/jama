@@ -1,0 +1,65 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'bootstrap/theme';
+
+body {
+  background-color: #efefef !important;
+}
+
+#status-form {
+  .col-md-11 {
+    padding-right: 0 !important;
+  }
+}
+
+.post {
+  background-color: #fff !important;
+  border-style: solid;
+      border-width: 1px 2px 1px 2px;
+      border-color: #eaeaea;
+
+box-sizing: border-box;
+  padding: 10px 0;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+
+-webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
+-moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
+box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.5);
+
+  margin-bottom: 20px;
+
+
+  .post-owner-thumb{
+
+  }
+  .post-body {
+    padding: 15px;
+  }
+  .post-body {
+  
+  }
+  .post-images {
+  
+  }
+  .post-actions {
+    padding: 5px 0; 
+    margin: 10px 0;
+  }
+}
+
+.comment {
+  margin-bottom: 10px;
+
+  .comment-body {
+    padding: 5px 15px;
+  }
+  .comment-actions {
+    padding: 5px 15px;
+  }
+  .comment-user-icon {
+  }
+  .comment-user-name {
+  }
+}

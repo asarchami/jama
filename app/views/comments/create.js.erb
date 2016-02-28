@@ -1,0 +1,1 @@
+$( "#<%= @comment.commentable.class.to_s.downcase %>-comments-<%= @comment.commentable.id %>" ).append("<%= escape_javascript("#{render @comment}").html_safe %>");
